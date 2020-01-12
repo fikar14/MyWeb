@@ -4,17 +4,18 @@ window.Vue = require('vue');
 import vuetify from './vuetify';
 import router from './router';
 
-//Component dengan menggunakan Router
-import Example from './components/ExampleComponent';
+//Component dengan menggunakan router
+import App from './components/AppComponent';
 
-//Menggunakan component tanpa router
+//Componen tanpa menggunakan router
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 new Vue({
     el: '#app',
-    vuetify,
     router,
+    vuetify,
     components:{
-        'example-component':Example
+        mode: 'history',
+        'app':App,
     }
 });
