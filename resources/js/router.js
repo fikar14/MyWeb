@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import LoginComponent from './components/LoginComponent';
 import AdminComponent from './components/AdminComponent';
 import RolesComponent from './components/RolesComponent';
+import UserComponent from './components/UserComponent';
 
 Vue.use(VueRouter)
 
@@ -22,10 +23,16 @@ const routes = [
       name: 'Admin',
       children: [
         {
+          path: 'users',
+          component: UserComponent,
+          name: 'Users'
+        },
+        {
           path: 'roles',
           component: RolesComponent,
           name: 'Roles'
         },
+        
 
       ],
       beforeEnter: (to, from, next) => {

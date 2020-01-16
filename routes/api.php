@@ -15,7 +15,9 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['auth:api'], 'namespace' => 'Api'], function(){
   Route::resource('roles', 'RoleController');
+  Route::resource('users', 'UserController'); 
   Route::post('/roles/delete', 'RoleController@deleteAll');
+  Route::post('/users/delete', 'UserController@deleteAll');
   Route::get('/verify', 'UserController@verify');
 });
 

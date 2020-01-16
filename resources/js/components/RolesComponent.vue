@@ -188,7 +188,9 @@
       searchIt(e){
         if(e.length > 1){
           axios.get(`/api/roles/${e}`)
-            .then(res => this.roles = res.data.roles)
+            .then(res => {
+              this.roles = res.data.roles
+            })
             .catch(err => console.dir(err.response))
         }else{
           if(e.length<=1){
